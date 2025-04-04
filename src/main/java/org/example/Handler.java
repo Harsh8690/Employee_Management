@@ -9,6 +9,7 @@ import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRespo
 import com.google.gson.Gson;
 import org.example.entity.EmployeeDetails;
 import org.example.entity.ProductsDetails;
+import org.example.entity.response.ResponseData;
 import org.example.repo.Repository;
 import org.example.services.EmployeeService;
 import org.example.services.ImplementService;
@@ -91,7 +92,8 @@ public class Handler implements RequestHandler<ApplicationLoadBalancerRequestEve
 
     private ApplicationLoadBalancerResponseEvent getAssignEmpProducts(ApplicationLoadBalancerRequestEvent event) {
         Gson gson = new Gson();
-        return ResponseUtils.response(gson.toJson(services.getEmpProducts()), 200, "200 OK", new HashMap<>());
+        List<ResponseData> responseData=services.getEmpProducts();
+        return ResponseUtils.response(gson.toJson(responseData), 200, "200 OK", new HashMap<>());
     }
 
     private ApplicationLoadBalancerResponseEvent empUpdate(ApplicationLoadBalancerRequestEvent event) {
