@@ -78,13 +78,15 @@ public class Handler implements RequestHandler<ApplicationLoadBalancerRequestEve
 
     private ApplicationLoadBalancerResponseEvent getAllEmployees(ApplicationLoadBalancerRequestEvent event) {
         Gson gson = new Gson();
-        return ResponseUtils.response(gson.toJson(services.getAllEmployees()), 200, "200 OK", new HashMap<>());
+        List<EmployeeDetails> service=services.getAllEmployees();
+        return ResponseUtils.response(gson.toJson(service), 200, "200 OK", new HashMap<>());
     }
 
     private ApplicationLoadBalancerResponseEvent getByIdEmp(ApplicationLoadBalancerRequestEvent event) {
         Gson gson = new Gson();
         int id = Integer.parseInt(event.getPath().substring("/employees/getEmp/".length()));
-        return ResponseUtils.response(gson.toJson(services.getById(id)), 200, "200 OK", new HashMap<>());
+        EmployeeDetails employeeDetails=services.getById(id);
+        return ResponseUtils.response(gson.toJson(employeeDetails), 200, "200 OK", new HashMap<>());
     }
 
     private ApplicationLoadBalancerResponseEvent getAssignEmpProducts(ApplicationLoadBalancerRequestEvent event) {
