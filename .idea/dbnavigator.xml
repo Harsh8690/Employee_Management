@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseAssistantManager">
@@ -24,7 +24,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="28313c12-14f5-4b07-999a-6d019ada82d4">
-      <console name="Connection" type="STANDARD" schema="employee" session="Main"><![CDATA[select * from employee_details;]]></console>
+      <console name="Connection" type="STANDARD" schema="employee" session="Main"><![CDATA[select * from employee_details
+
+;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -35,6 +37,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="28313c12-14f5-4b07-999a-6d019ada82d4" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="28313c12-14f5-4b07-999a-6d019ada82d4" dataset="employee.product" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />

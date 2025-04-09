@@ -1,11 +1,9 @@
 package org.example.repo;
 
-import com.mysql.cj.jdbc.CallableStatement;
 import org.example.configuration.DB;
 import org.example.entity.EmployeeDetails;
 import org.example.entity.ProductsDetails;
 import org.example.entity.response.ResponseData;
-import org.example.utils.ResponseUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
