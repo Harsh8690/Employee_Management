@@ -18,7 +18,7 @@ import org.example.utils.ResponseUtils;
 
 public class Handler implements RequestHandler<ApplicationLoadBalancerRequestEvent, ApplicationLoadBalancerResponseEvent> {
 
-    private EmployeeService services;
+    private final EmployeeService services;
 
     public Handler(EmployeeService services) {
         this.services = new ImplementService(new Repository());
