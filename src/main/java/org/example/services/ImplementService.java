@@ -8,7 +8,7 @@ import org.example.repo.Repository;
 import java.util.List;
 
 public class ImplementService implements EmployeeService {
-    private Repository repo;
+    private final Repository repo;
 
     public ImplementService(Repository repo) {
         this.repo = repo;
@@ -52,6 +52,5 @@ public class ImplementService implements EmployeeService {
         repo.deleteEmpById(id);
         return "deleted row by id :" + id;
     }
-
 
 }
