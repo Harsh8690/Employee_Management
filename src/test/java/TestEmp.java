@@ -14,7 +14,7 @@ public class TestEmp {
         requestEvent.setPath("/addEmp");
         requestEvent.setHttpMethod("POST");
         requestEvent.setBody("{\n" +
-                "    \"firstName\": \"Sanjay\",\n" +
+                "    \"firstName\": \"Siddhi\",\n" +
                 "    \"lastName\": \"Sharma\",\n" +
                 "    \"phone\": \"123-456-7890\",\n" +
                 "    \"jobTitle\": \"Software Engineer\",\n" +
