@@ -1,4 +1,4 @@
-import com.amazonaws.services.lambda.runtime.RequestHandler;
+
 import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerResponseEvent;
 import org.example.Handler;
@@ -14,11 +14,11 @@ public class TestEmp {
         requestEvent.setPath("/addEmp");
         requestEvent.setHttpMethod("POST");
         requestEvent.setBody("{\n" +
-                "    \"firstName\": \"Siddhi\",\n" +
-                "    \"lastName\": \"Sharma\",\n" +
+                "    \"firstName\": \"Naman\",\n" +
+                "    \"lastName\": \"Singh\",\n" +
                 "    \"phone\": \"123-456-7890\",\n" +
-                "    \"jobTitle\": \"Software Engineer\",\n" +
-                "    \"email\": \"johndoe@example.com\"\n" +
+                "    \"jobTitle\": \"Flutter Developer\",\n" +
+                "    \"email\": \"naman@example.com\"\n" +
                 "  }");
 
         Handler handler = new Handler(new ImplementService(new Repository()));

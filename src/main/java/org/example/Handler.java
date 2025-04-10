@@ -48,18 +48,18 @@ public class Handler implements RequestHandler<ApplicationLoadBalancerRequestEve
             case "GET":
                 if (event.getPath().contains("/employees/getAllEmp")) {
                     Gson gson = new Gson();
-                    List<EmployeeDetails> service=services.getAllEmployees();
+                    List<EmployeeDetails> service = services.getAllEmployees();
                     return ResponseUtils.response(gson.toJson(service), 200, "200 OK", new HashMap<>());
 
                 } else if (event.getPath().startsWith("/employees/getEmp/")) {
                     Gson gson = new Gson();
                     int id = Integer.parseInt(event.getPath().substring("/employees/getEmp/".length()));
-                    EmployeeDetails employeeDetails=services.getById(id);
+                    EmployeeDetails employeeDetails = services.getById(id);
                     return ResponseUtils.response(gson.toJson(employeeDetails), 200, "200 OK", new HashMap<>());
 
                 } else if (event.getPath().contains("/getAssignEmpProducts")) {
                     Gson gson = new Gson();
-                    List<ResponseData> responseData=services.getEmpProducts();
+                    List<ResponseData> responseData = services.getEmpProducts();
                     return ResponseUtils.response(gson.toJson(responseData), 200, "200 OK", new HashMap<>());
                 }
                 break;
