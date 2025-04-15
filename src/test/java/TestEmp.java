@@ -1,6 +1,7 @@
 
 import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerResponseEvent;
+import com.google.gson.Gson;
 import org.example.Handler;
 import org.example.repo.Repository;
 import org.example.services.ImplementService;
@@ -74,7 +75,7 @@ public class TestEmp {
 
         Handler handler = new Handler(new ImplementService(new Repository()));
         ApplicationLoadBalancerResponseEvent responseEvent = handler.handleRequest(requestEvent, null);
-        System.out.println(responseEvent);
+        System.out.println(responseEvent.getBody());
     }
 
     @Test

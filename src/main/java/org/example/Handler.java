@@ -1,12 +1,9 @@
 package org.example;
 
-import java.util.*;
-
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerResponseEvent;
-import com.google.gson.Gson;
 import org.example.entity.EmployeeDetails;
 import org.example.entity.ProductsDetails;
 import org.example.entity.response.ResponseData;
@@ -14,7 +11,9 @@ import org.example.repo.Repository;
 import org.example.services.EmployeeService;
 import org.example.services.ImplementService;
 import org.example.utils.ResponseUtils;
+import com.google.gson.Gson;
 
+import java.util.*;
 
 public class Handler implements RequestHandler<ApplicationLoadBalancerRequestEvent, ApplicationLoadBalancerResponseEvent> {
 
