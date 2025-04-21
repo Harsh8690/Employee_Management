@@ -1,7 +1,6 @@
 
 import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerResponseEvent;
-import com.google.gson.Gson;
 import org.example.Handler;
 import org.example.repo.Repository;
 import org.example.services.ImplementService;
@@ -44,7 +43,7 @@ public class TestEmp {
     public void getById() {
         ApplicationLoadBalancerRequestEvent requestEvent = new ApplicationLoadBalancerRequestEvent();
         requestEvent.setHttpMethod("GET");
-        requestEvent.setPath("/employees/getEmp/5");
+        requestEvent.setPath("/employees/getEmp/3");
 
         Handler handler = new Handler(new ImplementService(new Repository()));
         ApplicationLoadBalancerResponseEvent responseEvent = handler.handleRequest(requestEvent, null);
