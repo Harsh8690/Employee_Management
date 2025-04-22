@@ -53,7 +53,7 @@ public class ImplementService implements EmployeeService {
 
     @Override
     public String updateEmp(int id, String jobTitle) {
-        if (jobTitle==null || jobTitle.isEmpty()){
+        if (jobTitle==null || jobTitle.trim().isEmpty()){
             return "JobTitle is empty";
         }
         repo.updateEmp(id, jobTitle);
