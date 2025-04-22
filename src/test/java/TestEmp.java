@@ -14,7 +14,7 @@ public class TestEmp {
         requestEvent.setPath("/addEmp");
         requestEvent.setHttpMethod("POST");
         requestEvent.setBody("{\n" +
-                "    \"firstName\": \"Naman\",\n" +
+                "    \"firstName\": \"raghu\",\n" +
                 "    \"lastName\": \"Singh\",\n" +
                 "    \"phone\": \"123-456-7890\",\n" +
                 "    \"jobTitle\": \"Flutter Developer\",\n" +

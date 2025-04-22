@@ -16,6 +16,16 @@ public class ImplementService implements EmployeeService {
 
     @Override
     public String insertInEmployee(EmployeeDetails employeeDetails) {
+        if (employeeDetails == null ||
+                (employeeDetails.getFirstName() == null || employeeDetails.getFirstName().trim().isEmpty()) &&
+                        (employeeDetails.getLastName() == null || employeeDetails.getLastName().trim().isEmpty()) &&
+                        (employeeDetails.getPhone() == null || employeeDetails.getPhone().trim().isEmpty()) &&
+                        (employeeDetails.getJobTitle() == null || employeeDetails.getJobTitle().trim().isEmpty()) &&
+                        (employeeDetails.getEmail() == null || employeeDetails.getEmail().trim().isEmpty())) {
+
+            return "Employee details are missing or empty. Insert failed.";
+        }
+
         repo.insertInEmp(employeeDetails);
         return "inserted into the employees";
     }
@@ -43,6 +53,9 @@ public class ImplementService implements EmployeeService {
 
     @Override
     public String updateEmp(int id, String jobTitle) {
+        if (jobTitle==null || jobTitle.isEmpty()){
+            return "JobTitle is empty";
+        }
         repo.updateEmp(id, jobTitle);
         return "updated data in employee";
     }
