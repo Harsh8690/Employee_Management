@@ -5,7 +5,7 @@ import org.example.entity.ProductsDetails;
 import org.example.entity.response.ResponseData;
 import org.example.repo.Repository;
 
-import java.util.List;
+import java.util.*;
 
 public class ImplementService implements EmployeeService {
     private final Repository repo;
