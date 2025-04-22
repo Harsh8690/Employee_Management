@@ -13,13 +13,17 @@ public class TestEmp {
         ApplicationLoadBalancerRequestEvent requestEvent = new ApplicationLoadBalancerRequestEvent();
         requestEvent.setPath("/addEmp");
         requestEvent.setHttpMethod("POST");
-        requestEvent.setBody("{\n" +
-                "    \"firstName\": \"raghu\",\n" +
-                "    \"lastName\": \"Singh\",\n" +
-                "    \"phone\": \"123-456-7890\",\n" +
-                "    \"jobTitle\": \"Flutter Developer\",\n" +
-                "    \"email\": \"naman@example.com\"\n" +
-                "  }");
+        requestEvent.setBody(
+                """
+                        {
+                          "firstName": "Rahul",
+                          "lastName": "Kumar",
+                          "phone": "846-456-7890",
+                          "jobTitle": "Flutter Developer",
+                          "email": "naman@example.com"
+                        }
+                        """
+        );
 
         Handler handler = new Handler(new ImplementService(new Repository()));
         ApplicationLoadBalancerResponseEvent responseEvent = handler.handleRequest(requestEvent, null);
@@ -56,10 +60,13 @@ public class TestEmp {
         ApplicationLoadBalancerRequestEvent requestEvent = new ApplicationLoadBalancerRequestEvent();
         requestEvent.setPath("/products/addProduct");
         requestEvent.setHttpMethod("POST");
-        requestEvent.setBody(" {\n" +
-                "    \"productId\": 102,\n" +
-                "    \"productName\": \"Dell\"\n" +
-                "  }");
+        requestEvent.setBody(
+                """
+                         {
+                         "productId": "102",
+                         "productName": "Dell"
+                         }
+                        """);
 
         Handler handler = new Handler(new ImplementService(new Repository()));
         ApplicationLoadBalancerResponseEvent responseEvent = handler.handleRequest(requestEvent, null);
@@ -82,9 +89,13 @@ public class TestEmp {
         ApplicationLoadBalancerRequestEvent requestEvent = new ApplicationLoadBalancerRequestEvent();
         requestEvent.setHttpMethod("PUT");
         requestEvent.setPath("/emp/update/1");
-        requestEvent.setBody("{ " +
-                "    \"jobTitle\": \"Web App Developer\"\n" +
-                " }");
+        requestEvent.setBody(
+                """
+                        {
+                        "jobTitle" : "Web Developer"
+                        }
+                        """
+        );
 
         Handler handler = new Handler(new ImplementService(new Repository()));
         ApplicationLoadBalancerResponseEvent responseEvent = handler.handleRequest(requestEvent, null);
