@@ -19,7 +19,7 @@ public class TestEmp {
                           "firstName": "Raj",
                           "lastName": "Kumar",
                           "phone": "846-456-7890",
-                          "jobTitle": "Flutter Developer",
+                          "jobTitle": "DevOps Engineer",
                           "email": "naman@example.com"
                         }
                         """
@@ -47,7 +47,7 @@ public class TestEmp {
     public void getById() {
         ApplicationLoadBalancerRequestEvent requestEvent = new ApplicationLoadBalancerRequestEvent();
         requestEvent.setHttpMethod("GET");
-        requestEvent.setPath("/employees/getEmp/3");
+        requestEvent.setPath("/employees/getEmp/5");
 
         Handler handler = new Handler(new ImplementService(new Repository()));
         ApplicationLoadBalancerResponseEvent responseEvent = handler.handleRequest(requestEvent, null);
@@ -63,8 +63,8 @@ public class TestEmp {
         requestEvent.setBody(
                 """
                          {
-                         "productId": "102",
-                         "productName": "Dell"
+                         "productId": "103",
+                         "productName": "HP"
                          }
                         """);
 
@@ -88,11 +88,11 @@ public class TestEmp {
     public void updateEmp() {
         ApplicationLoadBalancerRequestEvent requestEvent = new ApplicationLoadBalancerRequestEvent();
         requestEvent.setHttpMethod("PUT");
-        requestEvent.setPath("/emp/update/1");
+        requestEvent.setPath("/emp/update/2");
         requestEvent.setBody(
                 """
                         {
-                        "jobTitle" : "Web Developer"
+                        "jobTitle" : "DevOps Developer"
                         }
                         """
         );
@@ -105,7 +105,7 @@ public class TestEmp {
     @Test
     public void deleteEmp() {
         ApplicationLoadBalancerRequestEvent requestEvent = new ApplicationLoadBalancerRequestEvent();
-        requestEvent.setPath("/emp/delete/4");
+        requestEvent.setPath("/emp/delete/44");
         requestEvent.setHttpMethod("DELETE");
         Handler handler = new Handler(new ImplementService(new Repository()));
         ApplicationLoadBalancerResponseEvent responseEvent = handler.handleRequest(requestEvent, null);

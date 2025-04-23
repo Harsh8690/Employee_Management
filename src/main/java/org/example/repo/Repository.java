@@ -151,7 +151,6 @@ public class Repository {
                 set emp_job_title=?
                 where id=?;
                 """;
-
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, jobTitle);
@@ -164,19 +163,19 @@ public class Repository {
 
     }
 
-    public void deleteEmpById(int id) {
+    public int deleteEmpById(int id) {
+        int affectedRow = 0;
         String query = """
                 delete from employee_details where id=?
                 """;
-
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, id);
-            ps.executeUpdate();
+            affectedRow = ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        return affectedRow;
     }
 
 }

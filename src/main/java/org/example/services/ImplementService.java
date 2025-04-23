@@ -27,7 +27,7 @@ public class ImplementService implements EmployeeService {
         }
 
         repo.insertInEmp(employeeDetails);
-        return "inserted into the employees";
+        return "data has been inserted into the employees table";
     }
 
     @Override
@@ -48,7 +48,7 @@ public class ImplementService implements EmployeeService {
     @Override
     public String insertInProducts(ProductsDetails productsDetails) {
         repo.insertProducts(productsDetails);
-        return "inserted into products";
+        return "data has been inserted into the products table";
     }
 
     @Override
@@ -57,13 +57,15 @@ public class ImplementService implements EmployeeService {
             return "JobTitle is empty";
         }
         repo.updateEmp(id, jobTitle);
-        return "updated data in employee";
+        return "data has been updated by id:" + id;
     }
 
     @Override
     public String deleteEmp(int id) {
-        repo.deleteEmpById(id);
-        return "deleted row by id :" + id;
+        if (repo.deleteEmpById(id) == 0) {
+            return "id not found in the db";
+        }
+        return "data has been deleted by id :" + id;
     }
 
 }
