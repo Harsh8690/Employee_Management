@@ -52,11 +52,13 @@ public class ImplementService implements EmployeeService {
     }
 
     @Override
-    public String updateEmp(int id, String jobTitle) {
-        if (jobTitle == null || jobTitle.trim().isEmpty()) {
+    public String updateEmp(String id, String jobTitle) {
+        if (id == null || id.trim().isEmpty()) {
+            return "id not found from to path";
+        } else if (jobTitle == null || jobTitle.trim().isEmpty()) {
             return "JobTitle is empty";
         }
-        repo.updateEmp(id, jobTitle);
+        repo.updateEmp(Integer.parseInt(id), jobTitle);
         return "data has been updated by id:" + id;
     }
 

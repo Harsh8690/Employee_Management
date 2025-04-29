@@ -65,7 +65,7 @@ public class Handler implements RequestHandler<ApplicationLoadBalancerRequestEve
 
             case "PUT":
                 if (event.getPath().startsWith("/emp/update/")) {
-                    int id = Integer.parseInt(event.getPath().substring("/emp/update/".length()));
+                    String id = event.getPath().substring("/emp/update/".length());
                     Gson gson = new Gson();
                     EmployeeDetails employeeDetails = gson.fromJson(event.getBody(), EmployeeDetails.class);
                     return ResponseUtils.response(services.updateEmp(id, employeeDetails.getJobTitle()), 200, "200 OK", new HashMap<>());

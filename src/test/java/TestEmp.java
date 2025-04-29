@@ -20,7 +20,7 @@ public class TestEmp {
                           "lastName": "Kumar",
                           "phone": "846-456-7890",
                           "jobTitle": "DevOps Engineer",
-                          "email": "naman@example.com"
+                          "email": "rajkumar@gmail.com"
                         }
                         """
         );
@@ -88,7 +88,7 @@ public class TestEmp {
     public void updateEmp() {
         ApplicationLoadBalancerRequestEvent requestEvent = new ApplicationLoadBalancerRequestEvent();
         requestEvent.setHttpMethod("PUT");
-        requestEvent.setPath("/emp/update/2");
+        requestEvent.setPath("/emp/update/3");
         requestEvent.setBody(
                 """
                         {

@@ -17,7 +17,7 @@ public interface EmployeeService {
 
     String insertInProducts(ProductsDetails productsDetails);
 
-    String updateEmp(int id, String jobTitle);
+    String updateEmp(String id, String jobTitle);
 
     String deleteEmp(int id);
 }
