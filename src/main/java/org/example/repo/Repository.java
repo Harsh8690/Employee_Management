@@ -13,7 +13,7 @@ import java.util.*;
 public class Repository {
     Connection con;
 
-    // instance block...!
+    // instance block....!
     {
         try {
             con = DB.getCon();
