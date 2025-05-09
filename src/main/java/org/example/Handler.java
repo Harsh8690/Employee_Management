@@ -6,6 +6,7 @@ import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerReque
 import com.amazonaws.services.lambda.runtime.events.ApplicationLoadBalancerResponseEvent;
 import org.example.entity.EmployeeDetails;
 import org.example.entity.ProductsDetails;
+import org.example.entity.response.EmployeesDetails;
 import org.example.entity.response.ResponseData;
 import org.example.repo.Repository;
 import org.example.services.EmployeeService;
@@ -47,7 +48,7 @@ public class Handler implements RequestHandler<ApplicationLoadBalancerRequestEve
             case "GET":
                 if (event.getPath().contains("/employees/getAllEmp")) {
                     Gson gson = new Gson();
-                    List<EmployeeDetails> service = services.getAllEmployees();
+                    List<EmployeesDetails> service = services.getAllEmployees();
                     return ResponseUtils.response(gson.toJson(service), 200, "200 OK", new HashMap<>());
 
                 } else if (event.getPath().startsWith("/employees/getEmp/")) {

@@ -9,10 +9,10 @@ public class DB {
 
     public static Connection getCon() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee", "root", "password");
+          //  Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/employee", "postgres", "1234");
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException  | RuntimeException e) {
             e.printStackTrace();
         }
 

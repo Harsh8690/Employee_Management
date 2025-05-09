@@ -16,11 +16,11 @@ public class TestEmp {
         requestEvent.setBody(
                 """
                         {
-                          "firstName": "Raj",
-                          "lastName": "Kumar",
+                          "firstName": "Rani",
+                          "lastName": "Devi",
                           "phone": "846-456-7890",
-                          "jobTitle": "DevOps Engineer",
-                          "email": "rajkumar@gmail.com"
+                          "jobTitle": "Software Engineer",
+                          "email": "ranidevi@gmail.com"
                         }
                         """
         );
@@ -63,7 +63,7 @@ public class TestEmp {
         requestEvent.setBody(
                 """
                          {
-                         "productId": "103",
+                         "empId": "11",
                          "productName": "HP"
                          }
                         """);

@@ -24,17 +24,16 @@ public class Repository {
 
     public void insertInEmp(EmployeeDetails employeeDetails) {
         String query = """
-                insert into employee_details(id, emp_fname, emp_lname, emp_phone, emp_job_title, emp_email) values(?,?,?,?,?,?)
+                insert into employee_details(emp_fname, emp_lname, emp_phone, emp_job_title, emp_email) values(?,?,?,?,?)
                 """;
 
         try {
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, employeeDetails.getId());
-            ps.setString(2, employeeDetails.getFirstName());
-            ps.setString(3, employeeDetails.getLastName());
-            ps.setString(4, employeeDetails.getPhone());
-            ps.setString(5, employeeDetails.getJobTitle());
-            ps.setString(6, employeeDetails.getEmail());
+            ps.setString(1, employeeDetails.getFirstName());
+            ps.setString(2, employeeDetails.getLastName());
+            ps.setString(3, employeeDetails.getPhone());
+            ps.setString(4, employeeDetails.getJobTitle());
+            ps.setString(5, employeeDetails.getEmail());
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,13 +93,12 @@ public class Repository {
 
     public void insertProducts(ProductsDetails productsDetails) {
         String query = """
-                insert into product(product_id, emp_id, product_name) values (?,?,?)
+                insert into product( emp_id, product_name) values (?,?)
                 """;
         try {
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, productsDetails.getProductId());
-            ps.setInt(2, productsDetails.getEmpId());
-            ps.setString(3, productsDetails.getProductName());
+            ps.setInt(1, productsDetails.getEmpId());
+            ps.setString(2, productsDetails.getProductName());
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

@@ -2,6 +2,7 @@ package org.example.services;
 
 import org.example.entity.EmployeeDetails;
 import org.example.entity.ProductsDetails;
+import org.example.entity.response.EmployeesDetails;
 import org.example.entity.response.ResponseData;
 import org.example.repo.Repository;
 
@@ -31,8 +32,8 @@ public class ImplementService implements EmployeeService {
     }
 
     @Override
-    public List<EmployeeDetails> getAllEmployees() {
-        return repo.getAllEmp();
+    public List<EmployeesDetails> getAllEmployees() {
+        return Collections.singletonList(new EmployeesDetails(repo.getAllEmp()));
     }
 
     @Override
